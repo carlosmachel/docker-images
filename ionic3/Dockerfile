@@ -14,11 +14,11 @@ RUN apt-get update \
     && apt-get install -y python-software-properties software-properties-common build-essential git wget curl unzip ruby \
     && git config --global user.email "carlosmachel@users.noreply.github.com" \
     && git config --global user.name "Carlos Machel" \
-    && curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh \
+    && curl -sL https://deb.nodesource.com/setup_7.x -o nodesource_setup.sh \
     && bash nodesource_setup.sh \
     && apt-get install -y nodejs \
     && npm config set unsafe-perm true --global \
-    && npm install -g npm@"$NPM_VERSION" \
+    && npm install -g npm@latest \
     && npm install -g cordova@"$CORDOVA_VERSION" ionic@"$IONIC_VERSION" \
     && gem install sass \
     && ionic start myApp sidemenu \
