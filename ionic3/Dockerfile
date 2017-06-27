@@ -20,7 +20,7 @@ RUN apt-get update \
     && npm config set unsafe-perm true --global \
     && npm install -g npm@latest \
     && chown -R $USER:$(id -gn $USER) /usr/local/ \
-    && chown -R $USER:$(id -gn $USER) /.config \
+    && chown -R $(whoami) ~/.npm \
     && npm install -g cordova@"$CORDOVA_VERSION" ionic@"$IONIC_VERSION" \
     && gem install sass \
     && ionic start myApp sidemenu \
