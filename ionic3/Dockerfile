@@ -31,23 +31,23 @@ RUN apt-get update \
     && gem install sass \
     && ionic start myApp sidemenu
 
-RUN echo 'Creating user: ${MYUSERNAME} wit UID $UID' && \
+RUN echo 'Creating user: ${MYUSERNAME} wit UID $UID'
 
-RUN mkdir -p /home/${MYUSERNAME} && \
+RUN mkdir -p /home/${MYUSERNAME}
 
-RUN echo "${MYUSERNAME}:x:${MYUID}:${MYGID}:Developer,,,:/home/${MYUSERNAME}:/bin/bash" >> /etc/passwd && \
+RUN echo "${MYUSERNAME}:x:${MYUID}:${MYGID}:Developer,,,:/home/${MYUSERNAME}:/bin/bash" >> /etc/passwd
 
-RUN echo "${MYUSERNAME}:x:${MYGID}:" >> /etc/group && \
+RUN echo "${MYUSERNAME}:x:${MYGID}:" >> /etc/group 
 
-RUN sudo echo "${MYUSERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${MYUSERNAME} && \
+RUN sudo echo "${MYUSERNAME} ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/${MYUSERNAME}
 
-RUN sudo chmod 0440 /etc/sudoers.d/${MYUSERNAME} && \
+RUN sudo chmod 0440 /etc/sudoers.d/${MYUSERNAME} 
 
-RUN sudo chown ${MYUSERNAME}:${MYUSERNAME} -R /home/${MYUSERNAME} && \
+RUN sudo chown ${MYUSERNAME}:${MYUSERNAME} -R /home/${MYUSERNAME} 
 
-RUN sudo chown root:root /usr/bin/sudo && \
+RUN sudo chown root:root /usr/bin/sudo 
 
-RUN chmod 4755 /usr/bin/sudo && \
+RUN chmod 4755 /usr/bin/sudo 
 
 WORKDIR /home/${MYUSERNAME}/
 EXPOSE 8100 35729
