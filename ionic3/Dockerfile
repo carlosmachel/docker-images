@@ -49,6 +49,6 @@ RUN sudo chown root:root /usr/bin/sudo
 
 RUN chmod 4755 /usr/bin/sudo 
 
-WORKDIR /home/${MYUSERNAME}/
+WORKDIR myApp
 EXPOSE 8100 35729
 CMD ["ionic", "lab"]
