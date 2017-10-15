@@ -6,7 +6,7 @@ RUN apk update
 
 RUN apk add py-pip
 
-RUN apk add git curl
+RUN apk add git curl dcron
 
 RUN pip install docker-compose
 
